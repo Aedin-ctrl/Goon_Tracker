@@ -1,0 +1,5 @@
+1. Different users
+2. Input food type and weight for it to calculate calories per meal
+3. want a daily calories variable that adds the per meal calories to it
+4. have a reset button that resets daily calories
+5. reset every 24 hours at 4 am
