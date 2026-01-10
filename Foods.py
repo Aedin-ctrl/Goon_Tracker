@@ -6,7 +6,7 @@ FOODS = {
     "banana": {"cal_per_gram": 0.89, "protein_per_gram": 0.011, "cal_per_serving": 90, "protein_per_serving": 1},
     "apple": {"cal_per_gram": 0.52, "protein_per_gram": 0.003, "cal_per_serving": 90, "protein_per_serving": 1},
     "pizza slice": {"cal_per_gram": 2.66, "protein_per_gram": 0.11, "cal_per_serving": 200, "protein_per_serving": 10},
-    "fried chicken": {"cal_per_gram": 2.60, "protein_per_gram": 0.25, "cal_per_serving": 0, "protein_per_serving": 0},
+    "fried chicken": {"cal_per_gram": 2.60, "protein_per_gram": 0.25, "cal_per_serving": 220, "protein_per_serving": 17},
     "powerade": {"cal_per_gram": 0.24, "protein_per_gram": 0.0, "cal_per_serving": 70, "protein_per_serving": 0},
     "vitamin water": {"cal_per_gram": 0.20, "protein_per_gram": 0.0, "cal_per_serving": 70, "protein_per_serving": 0},
     "yogurt bowl": {"cal_per_serving": 260, "protein_per_serving": 30},
