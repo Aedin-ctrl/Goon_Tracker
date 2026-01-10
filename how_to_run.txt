@@ -1,0 +1,8 @@
+Go to terminal
+run:
+
+cd ~/Desktop/Goon_Tracker
+source venv/bin/activate
+./runner.sh
+
+copy link given and run it:
