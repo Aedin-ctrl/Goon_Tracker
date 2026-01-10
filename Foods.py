@@ -1,21 +1,16 @@
-
 FOODS = {
     "grilled chicken": {"cal_per_gram": 1.65, "protein_per_gram": 0.31, "cal_per_serving": 0, "protein_per_serving": 0},
     "white rice": {"cal_per_gram": 1.30, "protein_per_gram": 0.026},
-    "egg": {"cal_per_serving": 0, "protein_per_serving": 0},
-    "4 eggs scrambled (s)": {"cal_per_serving": 1, "protein_per_serving": 1},
-    "banana": {"cal_per_serving": 1, "protein_per_serving": 1},
-    "apple": {"cal_per_serving": 1, "protein_per_serving": 1},
-    "pizza slice": {"cal_per_serving": 1, "protein_per_serving": 1},
-    "fried chicken": {"cal_per_gram": 1, "protein_per_gram": 1, "cal_per_serving": 0, "protein_per_serving": 0},
-    "powerade": {"cal_per_gram": 1, "protein_per_gram": 1, "cal_per_serving": 0, "protein_per_serving": 0},
-    "vitamin water": {"cal_per_gram": 1, "protein_per_gram": 1, "cal_per_serving": 0, "protein_per_serving": 0},
-    "yogurt bowl": {"cal_per_serving": 1, "protein_per_serving": 1},
-    "yogurt": {"cal_per_gram": 1, "protein_per_gram": 1},
-    "fried rice": {"cal_per_gram": 1, "protein_per_gram": 1},
-    "hamburger patty": {"cal_per_gram": 1, "protein_per_gram": 1, "cal_per_serving": 0, "protein_per_serving": 0},
-
-
-
-
+    "egg": {"cal_per_gram": 1.55, "protein_per_gram": 0.13, "cal_per_serving": 0, "protein_per_serving": 0},
+    "4 eggs scrambled (s)": {"cal_per_gram": 1.55, "protein_per_gram": 0.13, "cal_per_serving": 1, "protein_per_serving": 1},
+    "banana": {"cal_per_gram": 0.89, "protein_per_gram": 0.011, "cal_per_serving": 1, "protein_per_serving": 1},
+    "apple": {"cal_per_gram": 0.52, "protein_per_gram": 0.003, "cal_per_serving": 1, "protein_per_serving": 1},
+    "pizza slice": {"cal_per_gram": 2.66, "protein_per_gram": 0.11, "cal_per_serving": 1, "protein_per_serving": 1},
+    "fried chicken": {"cal_per_gram": 2.60, "protein_per_gram": 0.25, "cal_per_serving": 0, "protein_per_serving": 0},
+    "powerade": {"cal_per_gram": 0.24, "protein_per_gram": 0.0, "cal_per_serving": 0, "protein_per_serving": 0},
+    "vitamin water": {"cal_per_gram": 0.20, "protein_per_gram": 0.0, "cal_per_serving": 0, "protein_per_serving": 0},
+    "yogurt bowl": {"cal_per_gram": 0.60, "protein_per_gram": 0.10, "cal_per_serving": 1, "protein_per_serving": 1},
+    "yogurt": {"cal_per_gram": 0.60, "protein_per_gram": 0.10},
+    "fried rice": {"cal_per_gram": 1.65, "protein_per_gram": 0.045},
+    "hamburger patty": {"cal_per_gram": 2.50, "protein_per_gram": 0.26, "cal_per_serving": 0, "protein_per_serving": 0},
 }

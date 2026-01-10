@@ -13,9 +13,6 @@ FOODS = {
     "yogurt bowl": {"cal_per_serving": 1, "protein_per_serving": 1},
     "yogurt": {"cal_per_gram": 1, "protein_per_gram": 1},
     "fried rice": {"cal_per_gram": 1, "protein_per_gram": 1},
-    "hamburger patty": {"cal_per_gram": 1, "protein_per_gram": 1, "cal_per_serving": 0, "protein_per_serving": 0},
-
-
-
+    "hamburger patty": {"cal_per_gram": 1, "protein_per_gram": 1, "cal_per_serving": 0, "protein_per_serving": 0}
 
 }
