@@ -15,6 +15,33 @@ document.addEventListener('DOMContentLoaded', function () {
     const servingDesc = document.getElementById('serving-desc');
 
     /* ---------- AUTOCOMPLETE ---------- */
+    function showItems(items) {
+        autocompleteList.innerHTML = '';
+        items.forEach(name => {
+            const div = document.createElement('div');
+            div.className = 'autocomplete-item';
+            div.textContent = name;
+
+            div.onclick = () => {
+                foodInput.value = name;
+                autocompleteList.innerHTML = '';
+
+                // Fetch serving description
+                fetch('/calculate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `food=${encodeURIComponent(name)}&portions=1`
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        servingDesc.textContent = data.serving_desc || '';
+                    });
+            };
+
+            autocompleteList.appendChild(div);
+        });
+    }
+
     foodInput.addEventListener('input', function () {
         const query = this.value.trim();
 
@@ -25,33 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         fetch(`/autocomplete?q=${encodeURIComponent(query)}`)
             .then(res => res.json())
-            .then(items => {
-                autocompleteList.innerHTML = '';
+            .then(items => showItems(items));
+    });
 
-                items.forEach(name => {
-                    const div = document.createElement('div');
-                    div.className = 'autocomplete-item';
-                    div.textContent = name;
-
-                    div.onclick = () => {
-                        foodInput.value = name;
-                        autocompleteList.innerHTML = '';
-
-                        // Fetch serving description
-                        fetch('/calculate', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                            body: `food=${encodeURIComponent(name)}&portions=1`
-                        })
-                            .then(res => res.json())
-                            .then(data => {
-                                servingDesc.textContent = data.serving_desc || '';
-                            });
-                    };
-
-                    autocompleteList.appendChild(div);
-                });
-            });
+    // NEW FEATURE: Show all foods on focus
+    foodInput.addEventListener('focus', function () {
+        fetch('/autocomplete?q=') // empty query returns all foods
+            .then(res => res.json())
+            .then(items => showItems(items));
     });
 
     /* ---------- PORTIONS ---------- */

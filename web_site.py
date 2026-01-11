@@ -4,8 +4,7 @@ from flask import Flask, render_template, request, session, jsonify
 from web_site_data import FOODS, PEOPLE
 
 app = Flask(__name__)
-app.secret_key = "dev-secret-key-12345"
-
+app.secret_key = "dev-secret-key-12345"  # you can make any random string
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -20,20 +19,14 @@ def index():
         person = request.form.get("person", "Myself")
 
         if person not in session:
-            session[person] = {
-                "total_calories": 0,
-                "total_protein": 0
-            }
+            session[person] = {"total_calories": 0, "total_protein": 0}
 
         session[person]["total_calories"] += calories
         session[person]["total_protein"] += protein
         session.modified = True
 
     selected_person = request.args.get("person", "Myself")
-    totals = session.get(
-        selected_person,
-        {"total_calories": 0, "total_protein": 0}
-    )
+    totals = session.get(selected_person, {"total_calories": 0, "total_protein": 0})
 
     return render_template(
         "index.html",
@@ -48,10 +41,10 @@ def index():
 @app.route("/autocomplete")
 def autocomplete():
     query = request.args.get("q", "").lower().strip()
-    matches = [
-        f["name"] for f in FOODS
-        if query in f["name"].lower()
-    ]
+    if query == "":
+        matches = [f["name"] for f in FOODS]  # show all foods if empty
+    else:
+        matches = [f["name"] for f in FOODS if query in f["name"].lower()]
     return jsonify(matches)
 
 
