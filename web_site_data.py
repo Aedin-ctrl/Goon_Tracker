@@ -84,5 +84,3 @@ FOODS = [
         "protein_per_100g": 2.9
     }
 ]
-
-
