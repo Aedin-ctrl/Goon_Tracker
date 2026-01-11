@@ -1,4 +1,4 @@
-FOODS = {
+foods = {
     "grilled chicken": {"cal_per_gram": 1.65, "protein_per_gram": 0.31, "cal_per_serving": 120, "protein_per_serving": 23},
     "white rice": {"cal_per_gram": 1.30, "protein_per_gram": 0.026},
     "egg": {"cal_per_gram": 1.55, "protein_per_gram": 0.13, "cal_per_serving": 60, "protein_per_serving": 6},
