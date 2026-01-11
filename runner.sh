@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 source venv/bin/activate
 
 # Start Flask in background
-python3 web_app.py &
+python3 web_site.py &
 FLASK_PID=$!
 
 # Start Cloudflare Tunnel

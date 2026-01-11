@@ -1,7 +1,7 @@
 # web_site.py
 
 from flask import Flask, render_template, request, session, jsonify
-from web_site_data import FOODS, PEOPLE   # FIXED IMPORT
+from web_site_data import FOODS, PEOPLE
 
 app = Flask(__name__)
 app.secret_key = "dev-secret-key-12345"
