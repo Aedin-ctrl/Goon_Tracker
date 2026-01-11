@@ -1,6 +1,6 @@
 # web_site_data.py
 
-PEOPLE = ["Aedin", "Sammy", "Guest"]
+PEOPLE = ["Aedin", "Sammy", "Jake","James", "Terp", "Brady", "Guest1", "Guest2",  "Guest3"]
 
 FOODS = [
     {"name": "Grilled Chicken Breast", "serving_desc": "100 g", "calories_per_serving": 165, "protein_per_serving": 31, "calories_per_100g": 165, "protein_per_100g": 31},
