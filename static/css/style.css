@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Top-left selector */
+.top-left {
+    align-self: flex-start;
+}
+
+/* Main input row */
+.main-input {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Food input */
+.food-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* REQUIRED for autocomplete positioning */
+}
+
+/* Portion / weight column */
+.portion-weight {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Autocomplete dropdown */
+#autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1000;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover {
+    background: #eee;
+}
+
+/* Calculate button */
+.calculate-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+}
+
+/* Results display */
+.results {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Add + summary section */
+.add-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.add-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.summary {
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .main-input {
+        flex-direction: column;
+    }
+
+    .food-section,
+    .portion-weight {
+        width: 100%;
+    }
+
+    .add-section {
+        flex-direction: column;
+    }
+}

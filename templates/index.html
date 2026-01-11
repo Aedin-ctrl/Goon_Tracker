@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Top-left person selector -->
+        <div class="top-left">
+            <label for="person">Tracking for</label>
+            <select id="person" name="person" onchange="changePerson()">
+                {% for p in persons %}
+                    <option value="{{ p }}" {% if p == selected_person %}selected{% endif %}>
+                        {{ p }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Main input row -->
+        <div class="main-input">
+            <div class="food-section">
+                <label for="food">Food / Meal</label>
+                <input
+                    type="text"
+                    id="food"
+                    name="food"
+                    placeholder="Type food name (e.g. grilled chicken breast, avocado)"
+                    autocomplete="off"
+                >
+                <div id="autocomplete-list"></div>
+            </div>
+
+            <div class="portion-weight">
+                <div class="input-group">
+                    <label for="portions">Portions</label>
+                    <select id="portions" name="portions">
+                        <option value="">Select</option>
+                        <option value="0.5">0.5 serving</option>
+                        <option value="1">1 serving</option>
+                        <option value="2">2 servings</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <input
+                        type="number"
+                        id="custom-portions"
+                        placeholder="e.g. 1.5"
+                        style="display:none;"
+                        step="0.1"
+                    >
+                    <span id="serving-desc"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="weight">Weight (g)</label>
+                    <input
+                        type="number"
+                        id="weight"
+                        name="weight"
+                        placeholder="e.g. 150"
+                    >
+                </div>
+            </div>
+
+            <button id="calculate" class="calculate-btn">Calculate</button>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="results" style="display:none;">
+            <div>Calories: <span id="calories"></span> kcal</div>
+            <div>Protein: <span id="protein"></span> g</div>
+        </div>
+
+        <!-- Add to log + summary -->
+        <div class="add-section">
+            <form id="add-form" method="POST">
+                <input type="hidden" name="person" value="{{ selected_person }}">
+                <input type="hidden" name="calories" id="hidden-calories">
+                <input type="hidden" name="protein" id="hidden-protein">
+                <button type="submit" class="add-btn">Add to Today's Log</button>
+            </form>
+
+            <div class="summary">
+                <div>Today's Total: {{ total_calories }} / 2200 kcal</div>
+                <div>Protein: {{ total_protein }} g</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
