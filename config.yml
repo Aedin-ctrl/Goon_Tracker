@@ -1,7 +1,0 @@
-tunnel: calorietracker
-credentials-file: ~/.cloudflared/calorietracker.json
-
-ingress:
-  - hostname: calorietracker.aedinlai.com
-    service: http://localhost:8080
-  - service: http_status:404
