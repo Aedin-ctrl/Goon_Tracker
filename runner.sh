@@ -10,8 +10,8 @@ source venv/bin/activate
 python3 web_site.py &
 FLASK_PID=$!
 
-# Run the named Cloudflare tunnel
-cloudflared tunnel run calorietracker
+# Run the named Cloudflare tunnel and use the config file
+cloudflared tunnel run calorietracker --config config.yml
 
 # When tunnel stops, kill Flask
 kill $FLASK_PID
